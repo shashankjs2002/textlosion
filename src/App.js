@@ -10,6 +10,7 @@ import {
 import AdditiveCipherDecrypt from './components/AdditiveCipherDecrypt';
 import MonoAlphabeticCipherDecrypt from './components/MonoAlphabeticCipherDecrypt';
 import MonoAlphabeticEncrypt from './components/MonoAlphabeticEncryt';
+import HillCypherEncrpt from './components/HillCipherEncrypt';
 
 function App() {
   return (
@@ -19,10 +20,11 @@ function App() {
       <Navbar/>
       <Routes>
 
-          <Route path="/textlosion" element={<Home/>} />
+          <Route path="/" element={<Home/>} />
           <Route path="/additive-cipher-decrypt" element={<AdditiveCipherDecrypt/>} />
           <Route path="/mono-alphabetic-cipher-decrypt" element={<MonoAlphabeticCipherDecrypt/>} />
           <Route path="/mono-alphabetic-cipher-encrypt" element={<MonoAlphabeticEncrypt/> } />
+          <Route path="/hill-cipher-encrypt" element={<HillCypherEncrpt/>} />
           
         </Routes>
       

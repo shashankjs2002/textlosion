@@ -125,6 +125,7 @@ const MonoAlphabeticEncrypt = () => {
 
     return (
         <div>
+            <h2>Convert Plain Text to Mono Alphabetic Cipher Text</h2>
             <div className="card" >
                 <div className="card-body">
                     <h5 className="card-title">Plain Text</h5>

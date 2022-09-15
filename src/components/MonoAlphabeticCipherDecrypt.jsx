@@ -162,12 +162,19 @@ const MonoAlphabeticCipherDecrypt = () => {
                      
                     Org = Org.concat(maxFreqLetter[0])
                 }
-                else if(keysSorted[((counter+1)%10)]===parameters.additivecipherText.toLowerCase()[index]){
-                    // ascii - keyBe>90 ? ascii = 65+ (ascii -keyBe-90) :ascii= ascii - keyBe
-                    // shifted = String.fromCharCode(ascii+1)
-                    //  console.log("first")
+                else if(keysSorted[((counter+1)%26)]===parameters.additivecipherText.toLowerCase()[index]){
                     Org = Org.concat(maxFreqLetter[1])
                 }
+                else if(keysSorted[((counter+2)%26)]===parameters.additivecipherText.toLowerCase()[index]){
+                    Org = Org.concat(maxFreqLetter[2])
+                }
+                else if(keysSorted[((counter+3)%26)]===parameters.additivecipherText.toLowerCase()[index]){
+                    Org = Org.concat(maxFreqLetter[3])
+                }
+                else if(keysSorted[((counter+4)%26)]===parameters.additivecipherText.toLowerCase()[index]){
+                    Org = Org.concat(maxFreqLetter[4])
+                }
+                
                 // if(ascii>=65 && ascii <=90){
                 //     ascii - keyBe>90 ? ascii = 65+ (ascii -keyBe-90) :ascii= ascii - keyBe
                 //     shifted = String.fromCharCode(ascii+1)
@@ -198,6 +205,12 @@ const MonoAlphabeticCipherDecrypt = () => {
                 //     // Org = Org.concat(shifted)
                 // }
 
+                // else if(ascii>=97 && ascii <=122){
+                //     // ascii - keyBe>90 ? ascii = 65+ (ascii -keyBe-90) :ascii= ascii - keyBe
+                //     shifted = String.fromCharCode(ascii+1)
+                //     Org = Org.concat(shifted)
+                // }
+
                 else{
                     Org = Org.concat(parameters.additivecipherText[index].toLowerCase())   
                 }
@@ -220,6 +233,7 @@ const MonoAlphabeticCipherDecrypt = () => {
 
     return (
         <div>
+            <h2>Convert Mono Alphabetic Cipher Text to Plain Text</h2>
             <div className="card" >
                 <div className="card-body">
                     <h5 className="card-title">Decrypt Mono Alphabetic Cipher Text</h5>

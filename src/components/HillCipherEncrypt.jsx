@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 
-const Home = () => {
-    const [parameters, setParameters] = useState({key:0, plainText:""})
+const HillCipherEncrypt = () => {
+    const [parameters, setParameters] = useState({key:"", plainText:""})
     const [cipherText, setCipherText] = useState("")
     let cipheredString = "";
     let ciphered = "";
@@ -17,9 +17,24 @@ const Home = () => {
 
     useEffect(() => {
       
+        let asciiArr = []
+        let keyArr = []
+
+        for (let index = 0; index < parameters.key.length; index++) {
+            let ascii = parameters.key.toLowerCase().charCodeAt(index)
+            let shifted = ""
+            keyArr.push(ascii-96)
+            console.log(keyArr)
+            
+        }
       for (let index = 0; index < parameters.plainText.length; index++) {
-        let ascii = parameters.plainText.charCodeAt(index)
+        let ascii = parameters.plainText.toLowerCase().charCodeAt(index)
         let shifted = ""
+        asciiArr.push(ascii-96)
+        console.log(asciiArr)
+
+        
+
         if(ascii>=65 && ascii <=90){
             // console.log(ascii)
             // console.log(ascii + parseInt(parameters.key))
@@ -28,7 +43,6 @@ const Home = () => {
             shifted = String.fromCharCode(ascii)
             // console.log(shifted)
             ciphered = ciphered.concat(shifted)
-            
         }
         else if(ascii>=97 && ascii <=122){
             ascii + parseInt(parameters.key)>122 ? ascii = 96+( (ascii +parseInt(parameters.key))-122) :ascii= ascii+parseInt(parameters.key)
@@ -48,7 +62,6 @@ const Home = () => {
 
     return (
         <div>
-            <h2>Convert Plain Text to Additive Cipher Text</h2>
             <div className="card" >
                 <div className="card-body">
                     <h5 className="card-title">Plain Text</h5>
@@ -57,7 +70,7 @@ const Home = () => {
                     <textarea className="form-control" id="plainText" rows="3" value={parameters.plainText} name="plainText" onChange={onchange}></textarea>
                 </div>
                 <label htmlFor="key"></label>
-                <p>Key <input name="key" id="key" type="range" min="0" max="25" value={parameters.key} onChange={onchange}></input> {parameters.key} </p>
+                <p>Key <input className="form-control" name="key" id="key" type="text" value={parameters.key} onChange={onchange}></input> </p>
                 </div>
             </div>
 
@@ -71,4 +84,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default HillCipherEncrypt
