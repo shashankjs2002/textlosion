@@ -19,7 +19,7 @@ function App() {
       <Navbar/>
       <Routes>
 
-          <Route path="/" element={<Home/>} />
+          <Route path="/textlosion" element={<Home/>} />
           <Route path="/additive-cipher-decrypt" element={<AdditiveCipherDecrypt/>} />
           <Route path="/mono-alphabetic-cipher-decrypt" element={<MonoAlphabeticCipherDecrypt/>} />
           <Route path="/mono-alphabetic-cipher-encrypt" element={<MonoAlphabeticEncrypt/> } />
